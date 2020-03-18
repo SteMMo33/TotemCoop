@@ -9,7 +9,8 @@ Window {
 
     title: qsTr("Totem COOP")
 
-    MainForm {
+
+    PageInizio {
         anchors.fill: parent
         mouseArea.onClicked: {
             console.log(qsTr('Clicked on background. Text: "' + textEdit.text + '"'))

@@ -6,7 +6,16 @@ Item {
 
     RiquadroOrdine {
         id: riquadroOrdine
-        x: 155
-        y: 99
+        x: 200
+        y: 150
+        width: 500
+        height: 500
+    }
+
+    Image {
+        id: imgEsci
+        x: 15
+        y: 449
+        source: "images/icona_ESCI.png"
     }
 }

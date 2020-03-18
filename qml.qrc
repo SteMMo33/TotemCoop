@@ -8,5 +8,21 @@
         <file>PagePiazzole.qml</file>
         <file>PagePiazzoleForm.ui.qml</file>
         <file>RiquadroOrdine.qml</file>
+        <file>images/barcode_linear_ok_2.png</file>
+        <file>images/icona_bancomat_new.png</file>
+        <file>images/icona_carta_di_credito_vpay_4.png</file>
+        <file>images/icona_carta_privativa_liguria.png</file>
+        <file>images/icona_carta_privativa_new.png</file>
+        <file>images/icona_ESCI.png</file>
+        <file>images/icona_ESCI_200.png</file>
+        <file>images/icona_INDIETRO_260.png</file>
+        <file>images/icona_RITIRA_200.png</file>
+        <file>images/istruzioni_iniziali_2.png</file>
+        <file>images/marker_coop_4.gif</file>
+        <file>images/ritira_altri_ordini_3.png</file>
+        <file>images/VERSO_INSERIMENTO_CARTA_5.png</file>
+        <file>TastieraBottone.qml</file>
+        <file>Tastiera.qml</file>
+        <file>images/pulsante_tastiera_4.png</file>
     </qresource>
 </RCC>
