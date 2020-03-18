@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>PageInizio.ui.qml</file>
+        <file>PagePaga.qml</file>
+        <file>PageOrdini.qml</file>
+        <file>PageOrdiniForm.ui.qml</file>
+        <file>PagePiazzole.qml</file>
+        <file>PagePiazzoleForm.ui.qml</file>
+        <file>RiquadroOrdine.qml</file>
+    </qresource>
+</RCC>
