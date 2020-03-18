@@ -18,4 +18,18 @@ Item {
         y: 449
         source: "images/icona_ESCI.png"
     }
+
+    Image {
+        id: image
+        x: 8
+        y: 247
+        source: "images/sinistra_150.png"
+    }
+
+    Image {
+        id: image1
+        x: 742
+        y: 247
+        source: "images/destra_150.png"
+    }
 }

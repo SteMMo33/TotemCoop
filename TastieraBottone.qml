@@ -1,7 +1,10 @@
 import QtQuick 2.0
 
 Item {
+    id: thisBtn
     property string key: "Y"
+
+    signal clicked()
 
     width: 100
     height: 100
@@ -27,11 +30,8 @@ Item {
 
         MouseArea {
             id: mouseArea
-            x: 0
-            y: 0
-            width: 100
-            height: 100
-            onClicked: { console.log("Click") }
+            anchors.fill: parent
+            onClicked: { console.log("Click"); thisBtn.clicked(); }
         }
     }
 

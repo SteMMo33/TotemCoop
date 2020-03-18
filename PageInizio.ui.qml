@@ -1,26 +1,11 @@
 import QtQuick 2.7
 
 Rectangle {
-    property alias textEdit: textEdit
 
     width: 1100
     height: 700
     property alias mouseArea: mouseArea
 
-    TextEdit {
-        id: textEdit
-        text: qsTr("Enter some text...")
-        verticalAlignment: Text.AlignVCenter
-        anchors.top: parent.top
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: 20
-        Rectangle {
-            anchors.fill: parent
-            anchors.margins: -10
-            color: "transparent"
-            border.width: 1
-        }
-    }
 
     Image {
         id: imgBarcode
@@ -50,5 +35,7 @@ Rectangle {
         y: 369
         width: 300
         height: 300
+
+        onValidCode: console.log("Code "+ code); // Loader.source = "PageOrdini.qml";
     }
 }

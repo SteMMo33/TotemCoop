@@ -24,5 +24,7 @@
         <file>TastieraBottone.qml</file>
         <file>Tastiera.qml</file>
         <file>images/pulsante_tastiera_4.png</file>
+        <file>images/sinistra_150.png</file>
+        <file>images/destra_150.png</file>
     </qresource>
 </RCC>

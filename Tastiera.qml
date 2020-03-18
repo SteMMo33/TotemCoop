@@ -1,6 +1,12 @@
 import QtQuick 2.0
 
 Item {
+    id: keyboard
+
+    property alias code: codice.text
+
+    signal validCode(string code)
+
     Grid {
         id: grid
         x: 103
@@ -14,18 +20,19 @@ Item {
         TastieraBottone {
             id: btn1
             key: "1"
-            // MouseArea.onClicked: { console.log("1"); }
+            onClicked: codice.text += "1"
         }
 
         TastieraBottone {
             id: btn2
             key: "2"
-            // MouseArea.onClicked: { console.log("2"); }
+            onClicked: codice.text += "2"
         }
 
         TastieraBottone {
             id: btn3
             key: "3"
+            onClicked: codice.text += "3"
         }
 
         TastieraBottone {
@@ -44,8 +51,21 @@ Item {
         }
 
         TastieraBottone {
+            id: btnCanc
+            key: "X"
+            onClicked: codice.text = ""
+        }
+
+        TastieraBottone {
+            id: btn0
+            key: "0"
+            onClicked: codice.text += "0"
+        }
+
+        TastieraBottone {
             id: btnOk
             key: "OK"
+            onClicked: keyboard.validCode(codice.text)
         }
 
 
