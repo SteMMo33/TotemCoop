@@ -1,6 +1,9 @@
 import QtQuick 2.0
 
 Item {
+    property var importo
+    property var ordineNo
+
     Rectangle {
         id: rectangle
         color: "#000000"

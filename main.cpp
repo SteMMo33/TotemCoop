@@ -12,5 +12,6 @@ int main(int argc, char *argv[])
 
     QSize size = app.screens()[0]->size();
 
+
     return app.exec();
 }
