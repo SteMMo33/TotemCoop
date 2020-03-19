@@ -2,15 +2,16 @@ import QtQuick 2.7
 
 Rectangle {
 
-    width: 1100
+    width: 1366
     height: 700
-    property alias mouseArea: mouseArea
 
+    property alias mouseArea: mouseArea
+    property alias tastiera: tastiera
 
     Image {
         id: imgBarcode
-        x: 69
-        y: 340
+        x: 231
+        y: 404
         source: "images/barcode_linear_ok_2.png"
 
         MouseArea {
@@ -24,18 +25,16 @@ Rectangle {
 
     Image {
         id: imgIstruzioni
-        x: -26
-        y: 39
+        x: 8
+        y: 69
         source: "images/istruzioni_iniziali_2.png"
     }
 
     Tastiera {
         id: tastiera
-        x: 673
-        y: 369
+        x: 1009
+        y: 155
         width: 300
         height: 300
-
-        onValidCode: console.log("Code "+ code); // Loader.source = "PageOrdini.qml";
     }
 }

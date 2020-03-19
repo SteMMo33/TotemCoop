@@ -65,11 +65,13 @@ Item {
         TastieraBottone {
             id: btn8
             key: "8"
+            onClicked: codice.text += "8"
         }
 
         TastieraBottone {
             id: btn9
             key: "9"
+            onClicked: codice.text += "9"
         }
 
         TastieraBottone {

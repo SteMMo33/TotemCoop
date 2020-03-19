@@ -31,7 +31,7 @@ Item {
         MouseArea {
             id: mouseArea
             anchors.fill: parent
-            onClicked: { console.log("Click"); thisBtn.clicked(); }
+            onClicked: { thisBtn.clicked(); }
         }
     }
 
