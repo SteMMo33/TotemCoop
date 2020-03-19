@@ -1,12 +1,14 @@
 import QtQuick 2.7
 
 Rectangle {
+    id: rectangle
 
     width: 1366
     height: 700
 
     property alias mouseArea: mouseArea
     property alias tastiera: tastiera
+    property alias httpRes: httpRes.text
 
     Image {
         id: imgBarcode
@@ -36,5 +38,15 @@ Rectangle {
         y: 155
         width: 300
         height: 300
+    }
+
+    Text {
+        id: httpRes
+        text: qsTr("HTTP")
+        anchors.top: parent.top
+        anchors.topMargin: 5
+        anchors.left: parent.left
+        anchors.leftMargin: 5
+        font.pixelSize: 17
     }
 }
