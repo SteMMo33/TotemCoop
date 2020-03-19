@@ -9,21 +9,16 @@ Window {
 
     title: qsTr("Totem COOP")
 
-    Loader { id: pageLoader }
-
-    PageInizio {
+       PageInizio {
         id: pageInizio
         anchors.fill: parent
 
         Loader { id: pageLoaderI }
 
-        mouseArea.onClicked: {
-            console.log(qsTr('Clicked on background.'))
-            pageLoaderI.source = "PagePaga.qml"
-        }
 
         tastiera.onValidCode: {
             console.log("[PageInizio] Code:"+ code);
+            httpRes = "..."
 
             var http = new XMLHttpRequest()
             var url = "https://postman-echo.com/get";
@@ -42,16 +37,12 @@ Window {
                             httpRes = http.responseText
 
                             pageLoaderI.source = "PageOrdini.qml"
-
-                            msgError = "Messaggio di errore HTML 2"
-                            panelError.visible = true
-                            timerOper.start()
-
                         } else {
                              httpRes = "> http error: " + http.status
 
-                             msgError = "Messaggio di errore HTML"
-                             panelError.visible = true
+                            msgError = "Nessun ordine trovato"
+                            panelError.visible = true
+                            timerOper.start()
                         }
                }
             }

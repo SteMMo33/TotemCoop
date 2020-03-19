@@ -1,10 +1,37 @@
 import QtQuick 2.4
 
 PageOrdiniForm {
-    //width: 800
-    //height: 800
+    id: pageOrdiniForm
 
-    btnEsci.onClicked: console.log("ESC")
+    //width: parent.width
+    //height: parent.height
 
-    btnPrev.onClicked: console.log("Prev")
+    btnRitira.onClicked: {
+        riqPiazzola.nPiazzola = 5;
+        riqPiazzola.visible = true;
+        console.log("Ritirato!")
+        timerTimeout.start()
+    }
+
+    btnEsci.onClicked: {
+        visible = false
+        console.log("ESC")
+        timerTimeout.stop()
+    }
+
+    btnPrev.onClicked: {
+        riqOrdine.importo = 77
+        riqOrdine.ordineNo = 8888
+    }
+
+    btnNext.onClicked: {
+        riqOrdine.importo = 555
+        riqOrdine.ordineNo = 666
+    }
+
+    Timer {
+        id: timerTimeout
+        interval: 10
+        onIntervalChanged: pageOrdiniForm.visible = false;
+    }
 }

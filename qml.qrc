@@ -28,5 +28,7 @@
         <file>images/destra_150.png</file>
         <file>images/operatore.png</file>
         <file>images/warning.png</file>
+        <file>RiquadroPiazzola.qml</file>
+        <file>images/logo-coop-grande.png</file>
     </qresource>
 </RCC>

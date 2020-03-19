@@ -1,13 +1,17 @@
 import QtQuick 2.0
 
 Item {
-    property real importo: 0
-    property string ordineNo: "-"
+
+    property int nPiazzola : 0
+
+    width: 320
+    height: 200
 
     Rectangle {
         id: rectangle
         color: "#000000"
         radius: 20
+        anchors.bottomMargin: 0
         visible: true
         border.color: "#ff0000"
         border.width: 3
@@ -27,52 +31,29 @@ Item {
         }
 
         Text {
-            id: txtCarrello
+            id: txtTitolo
             x: 243
             y: 8
             color: "#ffffff"
-            text: qsTr("Carrello: ")+ordineNo
+            text: "Piazzola"
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: 27
         }
 
 
-        Text {
-            id: text2
-            x: 257
-            y: 113
-            color: "#ffffff"
-            text: qsTr("Totale da pagare")
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.pixelSize: 35
-        }
-
 
         Text {
-            id: txtImporto
+            id: txtPiazzola
             x: 226
-            y: 210
+            y: 75
             color: "#fffbfb"
-            text: qsTr("€ ")+importo.toFixed(2)
-            anchors.horizontalCenterOffset: 0
+            text: "XX"
+            anchors.horizontalCenterOffset: 1
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: 70
         }
 
-
-        Text {
-            id: txtProgressivo
-            x: 293
-            y: 430
-            color: "#fffbfb"
-            text: qsTr("Progressivo ordine: x di X")
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 20
-            anchors.horizontalCenterOffset: 0
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.pixelSize: 32
-        }
 
     }
 
