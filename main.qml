@@ -15,9 +15,11 @@ Window {
         id: pageInizio
         anchors.fill: parent
 
+        Loader { id: pageLoaderI }
+
         mouseArea.onClicked: {
             console.log(qsTr('Clicked on background.'))
-            pageLoader.source = "qrc://PagePaga.qml"
+            pageLoaderI.source = "PagePaga.qml"
         }
 
         tastiera.onValidCode: {
@@ -25,7 +27,7 @@ Window {
 
             var http = new XMLHttpRequest()
             var url = "https://postman-echo.com/get";
-            var params = "foo=1234";
+            var params = "foo=1234&foo1=bar1";
             http.open("GET", url, true);
 
             // Send the proper header information along with the request
@@ -34,21 +36,65 @@ Window {
             http.setRequestHeader("Connection", "close");
 
             http.onreadystatechange = function() { // Call a function when the state changes.
-                                if (http.readyState == 4) {
-                                    if (http.status == 200) {
-                                        console.log("> http ok: " + http.responseText)
-                                        httpRes = http.responseText
-                    pageLoader.source = "qrc://PagePaga.qml"
-                                    } else {
-                                        httpRes = "> http error: " + http.status
-                                    }
-                                }
-                            }
+               if (http.readyState == 4) {
+                        if (http.status == 200) {
+                            console.log("> http ok: " + http.responseText)
+                            httpRes = http.responseText
+
+                            pageLoaderI.source = "PageOrdini.qml"
+
+                            msgError = "Messaggio di errore HTML 2"
+                            panelError.visible = true
+                            timerOper.start()
+
+                        } else {
+                             httpRes = "> http error: " + http.status
+
+                             msgError = "Messaggio di errore HTML"
+                             panelError.visible = true
+                        }
+               }
+            }
             http.send(params);
         }
 
+        Timer {
+               id: timerOper
+               interval: 3000
+               repeat: false
+               running: false
+               triggeredOnStart: false
+               onTriggered: pageInizio.panelError.visible = false
+        }
+
+
+        states: [
+            State {
+                name: ""
+            },
+            State {
+                name: "pageOrdini"
+                PropertyChanges {
+                    target: pageOrdini; state: "focused"
+
+                }
+            },
+            State {
+                name: "pageInizio"
+                PropertyChanges {
+                    target: pageInizio; state: "focused"
+
+                }
+            }
+        ]
+
     }
 
+/*
+    PageOrdini {
+        id: pageOrdini
+    }
+*/
 
 /*
     View1{id:viewid1}
