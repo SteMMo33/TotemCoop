@@ -20,6 +20,12 @@ Window {
             console.log("[PageInizio] Code:"+ code);
             httpRes = "..."
 
+            if (code=="555"){
+                pageSettings.txtNumPorte.text = "5"
+                pageSettings.visible = true
+                return
+            }
+
             var http = new XMLHttpRequest()
             var url = "https://postman-echo.com/get";
             var params = "foo=1234&foo1=bar1";
@@ -36,7 +42,8 @@ Window {
                             console.log("> http ok: " + http.responseText)
                             httpRes = http.responseText
 
-                            pageLoaderI.source = "PageOrdini.qml"
+                            // pageLoaderI.source = "PageOrdini.qml"
+                            state = "pageOrdini"
                         } else {
                              httpRes = "> http error: " + http.status
 
@@ -65,46 +72,32 @@ Window {
             },
             State {
                 name: "pageOrdini"
-                PropertyChanges {
-                    target: pageOrdini; state: "focused"
-
-                }
+                PropertyChanges { target: pageOrdini; state: "focused" }
+                PropertyChanges { target: pageOrdini; visible: true }
             },
             State {
                 name: "pageInizio"
-                PropertyChanges {
-                    target: pageInizio; state: "focused"
-
-                }
+                PropertyChanges { target: pageInizio; state: "focused" }
+            },
+            State {
+                name: "stPageSettings"
+                PropertyChanges { target: pageSettings; visible: true }
             }
         ]
 
     }
 
-/*
+
     PageOrdini {
         id: pageOrdini
+        anchors.fill: parent
+        visible: false
     }
-*/
 
-/*
-    View1{id:viewid1}
-     View2{id:viewid2}
-     View3{id:viewid3}
-     states: [
-       State {
-           name: ""
-       },
-       State {
-           name: "view1"
-           PropertyChanges {target: viewid1; state: "focused"}
-       },
-       State {
-           name: "view2"
-           PropertyChanges {target: viewid2; state: "focused"}
-        ...
-       }
-     ]
-*/
+    PageSettings {
+        id: pageSettings
+        anchors.fill: parent
+        visible: false
+    }
 
 }

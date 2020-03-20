@@ -30,5 +30,7 @@
         <file>images/warning.png</file>
         <file>RiquadroPiazzola.qml</file>
         <file>images/logo-coop-grande.png</file>
+        <file>PageSettings.qml</file>
+        <file>PageSettingsForm.ui.qml</file>
     </qresource>
 </RCC>

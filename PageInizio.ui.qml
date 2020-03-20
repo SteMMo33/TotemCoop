@@ -6,7 +6,6 @@ Rectangle {
     width: 1366
     height: 700
 
-    property alias mouseArea: mouseArea
     property alias tastiera: tastiera
     property alias httpRes: httpRes.text
     property alias operatore: imgOperatore
@@ -15,19 +14,12 @@ Rectangle {
     property alias msgError: txtOperatore.text
     property alias panelError: rectOperatore
 
+    // var bool portrait: this.height > this.width
     Image {
         id: imgBarcode
         x: 231
         y: 404
         source: "images/barcode_linear_ok_2.png"
-
-        MouseArea {
-            id: mouseArea
-            x: 0
-            y: 58
-            width: 170
-            height: 158
-        }
     }
 
     Image {
@@ -96,4 +88,12 @@ Rectangle {
             font.pixelSize: 70
         }
     }
+    states: [
+        State {
+            name: "stError"
+        },
+        State {
+            name: "stAttesaWs"
+        }
+    ]
 }
