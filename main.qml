@@ -2,6 +2,10 @@ import QtQuick 2.7
 import QtQuick.Window 2.2
 
 Window {
+
+    // property int numeroSeriali - Non definire una variabile che arriva da C++ !!
+
+
     visible: true
 
     width: Screen.width
@@ -15,13 +19,19 @@ Window {
 
         Loader { id: pageLoaderI }
 
+    tastiera {
+        anchors.top: parent.height > parent.width ? parent.bottom : undefined
+        anchors.topMargin: parent.height > parent.width ? 250 : undefined
+        code: parent.height + " x " + parent.width // "AAA"
+    }
 
         tastiera.onValidCode: {
             console.log("[PageInizio] Code:"+ code);
             httpRes = "..."
 
             if (code=="555"){
-                pageSettings.txtNumPorte.text = "5"
+                console.log("N:"+numeroSeriali)
+                pageSettings.txtNumPorte.text = numeroSeriali.toString()
                 pageSettings.visible = true
                 return
             }

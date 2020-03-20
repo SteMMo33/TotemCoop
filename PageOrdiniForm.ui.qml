@@ -27,8 +27,11 @@ Rectangle {
 
     Image {
         id: imgEsci
-        x: 72
         y: 564
+        anchors.left: parent.left
+        anchors.leftMargin: 50
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 35
         source: "images/icona_ESCI.png"
 
         MouseArea {
@@ -39,8 +42,9 @@ Rectangle {
 
     Image {
         id: imgPrev
-        x: 37
         y: 247
+        anchors.left: parent.left
+        anchors.leftMargin: 50
         source: "images/sinistra_150.png"
 
         MouseArea {
@@ -53,6 +57,8 @@ Rectangle {
         id: imgNext
         x: 913
         y: 247
+        anchors.right: parent.right
+        anchors.rightMargin: 50
         source: "images/destra_150.png"
 
         MouseArea {
@@ -65,6 +71,10 @@ Rectangle {
         id: imgRitira
         x: 878
         y: 455
+        anchors.right: parent.right
+        anchors.rightMargin: 50
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 35
         source: "images/icona_RITIRA_200.png"
 
         MouseArea {
@@ -74,7 +84,7 @@ Rectangle {
     }
 
     Image {
-        id: image
+        id: imgTitolo
         x: 194
         y: 8
         anchors.horizontalCenter: parent.horizontalCenter
@@ -84,9 +94,10 @@ Rectangle {
     RiquadroPiazzola {
         id: riquadroPiazzola
         x: 411
-        y: 616
         width: 320
         height: 176
+        anchors.top: riquadroOrdine.bottom
+        anchors.topMargin: 50
         visible: false
         anchors.horizontalCenter: parent.horizontalCenter
     }

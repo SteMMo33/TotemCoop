@@ -15,26 +15,28 @@ Rectangle {
     property alias panelError: rectOperatore
 
     // var bool portrait: this.height > this.width
+
     Image {
         id: imgBarcode
-        x: 231
-        y: 404
+        x: 243
+        y: 484
         source: "images/barcode_linear_ok_2.png"
     }
 
     Image {
         id: imgIstruzioni
-        x: 8
-        y: 69
+        x: 28
+        y: 160
         source: "images/istruzioni_iniziali_2.png"
     }
 
     Tastiera {
         id: tastiera
-        x: 1009
-        y: 155
+        x: 1017
+        y: parent.height > parent.width ? 400 : 200
         width: 300
         height: 300
+        anchors.horizontalCenter: parent.height > parent.width ? parent.horizontalCenter : undefined
     }
 
     Text {
@@ -87,6 +89,15 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: 70
         }
+    }
+
+    Image {
+        id: image
+        x: 314
+        anchors.top: parent.top
+        anchors.topMargin: 5
+        anchors.horizontalCenter: parent.horizontalCenter
+        source: "images/logo-coop-grande.png"
     }
     states: [
         State {
