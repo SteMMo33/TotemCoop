@@ -6,15 +6,17 @@ Item {
     property alias code: codice.text
 
     signal validCode(string code)
-    width: 380
+    width: 450
     height: 480
 
     Grid {
         id: grid
         x: 36
-        y: 50
         width: 312
-        height: 420
+        anchors.top: display.bottom
+        anchors.topMargin: 15
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 0
         anchors.horizontalCenter: parent.horizontalCenter
         spacing: 5
         rows: 4
@@ -108,7 +110,7 @@ Item {
 
     Rectangle {
         id: display
-        height: 44
+        height: 55
         color: "#fec1c1"
         radius: 16
         anchors.top: parent.top
@@ -120,7 +122,9 @@ Item {
 
         Text {
             id: codice
+            width: 450
             text: qsTr("Text")
+            verticalAlignment: Text.AlignVCenter
             anchors.fill: parent
             font.bold: true
             horizontalAlignment: Text.AlignHCenter
