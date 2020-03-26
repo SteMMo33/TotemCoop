@@ -15,8 +15,6 @@ Window {
         id: pageInizio
         anchors.fill: parent
 
-        // Loader { id: pageLoaderI }
-
         tastiera {
             id: tastiera
             anchors.top: parent.height > parent.width ? parent.bottom : undefined
@@ -79,9 +77,25 @@ Window {
             http.send(params);
         }
 
+        mouseArea {
+            onPressed: function(){
+                console.log("pressedMain")
+                wsFunctions.wsGetOrder("336699")
+            }
+        }
+
+        WsFunctions {
+            id: wsFunctions
+            onResponse: {
+                console.log(data)
+                pageInizio.httpRes = data.faultString
+            }
+        }
+
+
         Timer {
-               id: timerOper
-               interval: 5000
+              id: timerOper
+              interval: 5000
                repeat: false
                running: false
                triggeredOnStart: false

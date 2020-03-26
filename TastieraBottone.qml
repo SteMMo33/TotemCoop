@@ -3,6 +3,7 @@ import QtQuick 2.0
 Item {
     id: thisBtn
     property string key: "Y"
+    property alias color: keyB.color
 
     signal clicked()
 

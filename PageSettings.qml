@@ -4,4 +4,9 @@ PageSettingsForm {
 
     btnChiudi.onClicked: visible = false
 
+
+    mouseArea.onPressed: function() {
+        console.log("pressed")
+    }
+
 }

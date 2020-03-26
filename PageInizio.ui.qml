@@ -5,6 +5,7 @@ Rectangle {
 
     width: 1400
     height: 800
+    property alias mouseArea: mouseArea
     property alias tastiera: tastiera
 
     property alias httpRes: httpRes.text
@@ -115,6 +116,19 @@ Rectangle {
         anchors.rightMargin: 200
         anchors.verticalCenter: parent.verticalCenter
         code: ""
+    }
+
+    Rectangle {
+        id: rectangle1
+        x: 31
+        y: 545
+        width: 200
+        height: 200
+        color: "#ffe0e0"
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+        }
     }
 
 

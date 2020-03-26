@@ -32,5 +32,6 @@
         <file>images/logo-coop-grande.png</file>
         <file>PageSettings.qml</file>
         <file>PageSettingsForm.ui.qml</file>
+        <file>WsFunctions.qml</file>
     </qresource>
 </RCC>

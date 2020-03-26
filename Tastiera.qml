@@ -78,11 +78,10 @@ Item {
 
         TastieraBottone {
             id: btnCanc
-            key: "X"
+            key: "C"
+            color: "#FF0000"
             onClicked: codice.text = ""
         }
-
-
 
 
         TastieraBottone {
@@ -92,18 +91,12 @@ Item {
         }
 
 
-
-
         TastieraBottone {
             id: btnOk
             key: "OK"
+            color: "#00AA00"
             onClicked: keyboard.validCode(codice.text)
         }
-
-
-
-
-
 
 
     }
