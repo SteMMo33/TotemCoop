@@ -6,12 +6,13 @@ Rectangle {
 
     width: 1200
     height: 800
+    property alias txtTotemId: txtTotemId
+    property alias txtShopId: txtShopId
     property alias mouseArea: mouseArea
 
     property alias cmbPorte: cmbPorte
     property alias txtNumPorte: txtNumPorte
     property alias btnChiudi: btnChiudi
-
 
     Button {
         id: btnChiudi
@@ -26,12 +27,12 @@ Rectangle {
 
     Pane {
         id: pane
-        x: 95
-        y: 51
-        width: 585
+        width: 491
         height: 93
-        anchors.horizontalCenterOffset: -266
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.left: pane1.left
+        anchors.leftMargin: 0
+        anchors.top: pane1.bottom
+        anchors.topMargin: 25
         visible: true
 
         Text {
@@ -52,19 +53,21 @@ Rectangle {
 
         ComboBox {
             id: cmbPorte
-            x: 214
-            y: -11
-            width: 340
+            x: 187
+            y: -5
+            width: 285
             height: 40
         }
     }
 
     Pane {
         id: pane1
-        x: 499
-        y: 209
-        width: 656
+        width: 491
         height: 200
+        anchors.top: parent.top
+        anchors.topMargin: 20
+        anchors.left: parent.left
+        anchors.leftMargin: 20
 
         Text {
             id: text2
@@ -86,40 +89,64 @@ Rectangle {
         Text {
             id: text4
             x: 25
-            y: 99
+            y: 103
             text: qsTr("TotemID:")
             font.pixelSize: 20
         }
 
-        TextInput {
-            id: txtShopId
-            x: 154
-            y: 66
-            width: 80
-            height: 20
-            text: qsTr("Text Input")
-            font.bold: true
-            inputMask: "NNNN"
-            font.pixelSize: 20
+        Rectangle {
+            id: rectangle1
+            x: 158
+            y: 57
+            width: 99
+            height: 35
+            color: "#ffffff"
+            radius: 5
+            border.width: 2
+
+            TextInput {
+                id: txtShopId
+                text: qsTr("Text Input")
+                anchors.rightMargin: 10
+                anchors.leftMargin: 10
+                anchors.bottomMargin: 5
+                anchors.topMargin: 5
+                anchors.fill: parent
+                font.bold: true
+                inputMask: "NNNN"
+                font.pixelSize: 20
+            }
         }
 
-        TextInput {
-            id: txtTotemId
-            x: 154
-            y: 101
-            width: 80
-            height: 20
-            text: qsTr("Text Input")
-            font.bold: true
-            inputMask: "NNNN"
-            font.pixelSize: 20
+        Rectangle {
+            id: rectangle2
+            x: 158
+            y: 98
+            width: 99
+            height: 34
+            color: "#ffffff"
+            radius: 4
+            border.width: 2
+
+            TextInput {
+                id: txtTotemId
+                text: qsTr("Text Input")
+                anchors.rightMargin: 10
+                anchors.leftMargin: 10
+                anchors.bottomMargin: 5
+                anchors.topMargin: 5
+                anchors.fill: parent
+                font.bold: true
+                inputMask: "NNNN"
+                font.pixelSize: 20
+            }
         }
     }
 
     Rectangle {
         id: rectangle
-        x: 219
-        y: 265
+        x: 887
+        y: 48
         width: 200
         height: 200
         color: "#ffe0e0"

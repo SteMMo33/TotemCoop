@@ -9,4 +9,7 @@ PageSettingsForm {
         console.log("pressed")
     }
 
+    onTxtTotemIdChanged: function(){
+        console.log("[PageSett] totemId changed:"+txtTotemId.text);
+    }
 }

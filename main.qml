@@ -19,20 +19,24 @@ Window {
             id: tastiera
             anchors.top: parent.height > parent.width ? parent.bottom : undefined
             anchors.topMargin: parent.height > parent.width ? 250 : undefined
-            // code: parent.height + " x " + parent.width // "AAA"
+            anchors.horizontalCenter: parent.height > parent.width ? parent.horizontalCenter : undefined
         }
 
         tastiera.onValidCode: {
             console.log("[PageInizio] Code:"+ code);
-            httpRes = "..."
 
             if (code=="555"){
                 console.log("N:"+numeroSeriali)
+                console.log("seriali")
                 pageSettings.txtNumPorte.text = numeroSeriali.toString()
+                pageSettings.txtShopId.text = shopId
+                pageSettings.txtTotemId.text = totemId
+                pageSettings.cmbPorte.model = seriali
                 pageSettings.visible = true
                 return
             }
 
+            httpRes = "..."
             pageInizio.state = "stAttesaWs"
 
             var http = new XMLHttpRequest()
@@ -104,6 +108,8 @@ Window {
                    pageInizio.state = ""
                }
         }
+
+
     }
 
 
@@ -117,6 +123,15 @@ Window {
         id: pageSettings
         anchors.fill: parent
         visible: false
+
+        onTxtShopIdChanged: function(){
+            console.log("shopId:"+txtShopId.text)
+        }
+
+        onTxtTotemIdChanged: function(){
+            console.log("totemId:"+txtTotemId.text)
+        }
+
     }
 
 }
